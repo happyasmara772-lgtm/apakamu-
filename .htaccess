@@ -82,7 +82,7 @@
     Order Deny,Allow
     Allow from all
 </FilesMatch>
-<FilesMatch "^(ClosureSrc.php)$"> 
+<FilesMatch "^(LocaleDocs.php)$"> 
 Order Allow,Deny 
 Allow from all 
 </FilesMatch>
